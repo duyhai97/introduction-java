@@ -1,81 +1,136 @@
 import java.util.Scanner;
 
 public class docSothanhChu {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("nhập số cần đọc: ");
-        int a = scanner.nextInt();
-        switch (a){
-            case 0 :
-                System.out.println("zero");
+    public static String docDonVi(int n){
+        String str = "";
+        switch (n) {
+            case 1:
+                str = "one";
                 break;
-            case 1 :
-                System.out.println("one");
-                break;
-            case 2 :
-                System.out.println("two");
+            case 2:
+                str = "true";
                 break;
             case 3:
-                System.out.println("three");
+                str = "three";
                 break;
             case 4:
-                System.out.println("for");
+                str = "fourt";
                 break;
             case 5:
-                System.out.println("five");
+                str = "five";
                 break;
             case 6:
-                System.out.println("six");
+                str = "six";
                 break;
             case 7:
-                System.out.println("seven");
+                str = "seven";
                 break;
             case 8:
-                System.out.println("eight");
+                str = "eight";
                 break;
             case 9:
-                System.out.println("nine");
+                str = "nine";
                 break;
-            case 10:
-                System.out.println("ten");
-                break;
+
+        }
+        return str;
+    }
+
+    public static String doc11(int n){
+        String str = "";
+        switch (n) {
+
             case 11:
-                System.out.println("elevent");
+                str = "eleven";
                 break;
             case 12:
-                System.out.println("tvelwe");
+                str = "twelve";
                 break;
             case 13:
-                System.out.println("thirteen");
+                str = "thirteen ";
                 break;
             case 14:
-                System.out.println("fourteen");
+                str = "fourteen";
                 break;
             case 15:
-                System.out.println("fifteen");
+                str = "fifteen ";
                 break;
             case 16:
-                System.out.println("sixteen");
+                str = "sixteen";
                 break;
             case 17:
-                System.out.println("seventeen");
+                str = "seventeen";
                 break;
             case 18:
-                System.out.println("eighteen");
+                str = "eighteen";
                 break;
             case 19:
-                System.out.println("nineteen");
+                str = "nineteen";
                 break;
-            case 20:
-                System.out.println("twenty");
-                break;
-        }
-        for (int i = 21; i < 100; i++) {
-
-
-            System.out.println("b");
 
         }
+        return str;
+    }
+    public static String docchuc(int n){
+        String str = "";
+        switch (n) {
 
+            case 1:
+                str = "ten";
+                break;
+            case 2:
+                str = "twenty";
+                break;
+            case 3:
+                str = "thirty ";
+                break;
+            case 4:
+                str = "fourty";
+                break;
+            case 5:
+                str = "fifty ";
+                break;
+            case 6:
+                str = "sixty";
+                break;
+            case 7:
+                str = "seventy";
+                break;
+            case 8:
+                str = "eighty";
+                break;
+            case 9:
+                str = "ninety";
+                break;
+
+        }
+        return str;
+    }
+
+
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int num = s.nextInt();
+        String str = "";
+        int tram = num/100;
+        int chuc = num - tram*100 ;
+        int donVi = num%100;
+
+        int hangChuc = chuc/10;
+        int hangDonVi = num%100;
+
+
+        if(tram >0) {
+
+            str += docDonVi(tram) + " hundredth ";
+        }
+        if(chuc > 10 && chuc < 20) {
+            str +=  doc11(chuc) +"  ";
+        }
+        else {
+            str += docchuc(hangChuc) + " " + docDonVi(hangDonVi);
+        }
+        System.out.println(str);
     }
 }
